@@ -135,7 +135,7 @@ const refreshVarDom = () => {
     activeTaskTitle = document.querySelectorAll('.active .taskTitle');
     activeIconCheck = document.querySelectorAll('.active .iconCheck');
     task = document.querySelectorAll('.task');
-}
+};
 
 const clearTask = () => {
     activeClearBtn.forEach(item => {
@@ -237,7 +237,7 @@ const completedFilter = () => {
         tasks.removeChild(tasks.firstChild);
     };
     tasksObject
-        .filter((taskObject) => taskObject.status.includes('completed'));
+        .filter((taskObject) => taskObject.status.includes('completed'))
         .map((taskObject) => {
             tasks.insertAdjacentHTML('beforeend',`
                 <li class="task active" id="${taskObject.id}" draggable="true">
@@ -264,7 +264,7 @@ const activeFilter = () => {
         tasks.removeChild(tasks.firstChild);
     };
     tasksObject
-        .filter((taskObject) => taskObject.status.includes('active'));
+        .filter((taskObject) => taskObject.status.includes('active'))
         .map((taskObject) => {
             tasks.insertAdjacentHTML('beforeend',`
                 <li class="task active" id="${taskObject.id}" draggable="true">
@@ -291,7 +291,7 @@ const allFilter = () => {
         tasks.removeChild(tasks.firstChild);
     };
     tasksObject
-        .filter((taskObject) => taskObject.status.includes('completed'));
+        .filter((taskObject) => taskObject.status.includes('completed'))
         .map((taskObject) => {
             tasks.insertAdjacentHTML('beforeend',`
                 <li class="task active" id="${taskObject.id}" draggable="true">
