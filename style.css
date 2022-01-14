@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.darkBody {
+  background: #161722;
+}
+
+.lightBody {
+  background: #f2f2f8;
+}
+
+header {
+  background-size: cover;
+  width: 100vw;
+  height: 35vh;
+}
+
+.darkHeader {
+  background-image: url("./images/bg-desktop-dark.jpg");
+}
+
+.lightHeader {
+  background-image: url("./images/bg-desktop-light.jpg");
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  min-width: 350px;
+  position: relative;
+  top: -180px;
+}
+
+.titleBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: white;
+  font-weight: 300;
+  margin: 10px 20px 10px 0;
+  font-weight: 700;
+  letter-spacing: 15px;
+}
+
+.sun, .moon {
+  padding: 15px 0 15px 15px;
+}
+
+.moon {
+  display: none;
+}
+
+.newTask {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.emptyCircle {
+  border: solid 1px #393a4c;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.emptyCircle:hover {
+  border: none;
+}
+
+#taskInput {
+  font-size: 1.5em;
+  padding: 10px 2% 10px 10%;
+  width: 88%;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #9394a5;
+}
+
+.darkInput {
+  background: #25273c;
+}
+
+.lightInput {
+  background: #fafafa;
+}
+
+.emptyCircleNewTask {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+}
+
+.tasksBox {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.darkTasksBox {
+  background: #25273c;
+  -webkit-box-shadow: 0 1px 50px #171717;
+          box-shadow: 0 1px 50px #171717;
+}
+
+.lightTasksBox {
+  background: #fafafa;
+  -webkit-box-shadow: 0 1px 50px #919191;
+          box-shadow: 0 1px 50px #919191;
+}
+
+.task {
+  font-size: 1.3em;
+  padding: 15px;
+  border-bottom: 1px solid #393a4c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task p {
+  margin-left: 15px;
+  color: #9394a5;
+}
+
+.taskTitleBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tasksFooter {
+  padding: 15px;
+  color: #484b6a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.8em;
+}
+
+.typeTask {
+  margin: 0 10px 0 10px;
+}
+
+.darkTypeTask:hover, .darkClearCompleted:hover {
+  color: white;
+}
+
+.lightTypeTask:hover, .lightClearCompleted:hover {
+  color: black;
+  font-weight: bold;
+}
+
+.iconCheck {
+  width: 12px;
+  height: 12px;
+  display: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.borderCircle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.borderCircle:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+}
+
+.darkEmptyCircleTask {
+  background: #25273c;
+}
+
+.lightEmptyCircleTask {
+  background: #fafafa;
+}
+
+.drag {
+  font-size: 0.8em;
+  color: #484b6a;
+  margin-top: 20px;
+}
+
+.invisible {
+  display: none;
+}
+
+.over {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+.mobileFooterUp, .mobileFooterDown {
+  display: none;
+}
+
+.mobileFooterUp {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5%;
+  color: #484b6a;
+  font-size: 0.8em;
+}
+
+.mobileFooterDown {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+  padding: 5%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #484b6a;
+  font-size: 0.8em;
+}
+
+.darkMobileFooterDown {
+  background: #25273c;
+  -webkit-box-shadow: 0 1px 50px #171717;
+          box-shadow: 0 1px 50px #171717;
+}
+
+.lightMobileFooterDown {
+  background: #fafafa;
+  -webkit-box-shadow: 0 1px 50px #919191;
+          box-shadow: 0 1px 50px #919191;
+}
+
+@media screen and (max-width: 980px) {
+  .mobileFooterUp, .mobileFooterDown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .tasksFooter {
+    display: none;
+  }
+  #taskInput {
+    padding: 10px 2% 10px 14%;
+    width: 84%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

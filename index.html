@@ -1,36 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Todo app</title>
 </head>
-<body>
+<body class="darkBody">
+  <header class="darkHeader">
+    
+  </header>
+  <main>
+    <div class="titleBox">
+      <h1>TODO</h1>
+      <img src="./images/icon-sun.svg" alt="sun" class="sun">
+      <img src="./images/icon-moon.svg" alt="moon" class="moon">
+    </div>
+    <div class="newTask">
+      <div class="emptyCircle emptyCircleNewTask"></div>
+      <input type="text" id="taskInput" name="taskInput" class="darkInput">
+    </div>
+    
+    <div class="tasksBox darkTasksBox">
+      <ul class="tasks">
+      </ul>
+      <div class="tasksFooter">
+        <div>
+          <span class="itemsLeft"></span>
+        </div>
+        <div>
+          <span class="darkTypeTask typeTask">All</span>
+          <span class="darkTypeTask typeTask">Active</span>
+          <span class="darkTypeTask typeTask">Completed</span>
+        </div>
+        <div>
+          <span class="clearCompleted darkClearCompleted">Clear Completed</span>
+        </div>
+      </div>
+      <div class="mobileFooterUp">
+        <span class="itemsLeft"></span>
+        <span class="clearCompleted darkClearCompleted">Clear Completed</span>
+      </div>
+    </div>
+    <div class="mobileFooterDown darkMobileFooterDown">
+      <span class="darkTypeTask typeTask">All</span>
+      <span class="darkTypeTask typeTask">Active</span>
+      <span class="darkTypeTask typeTask">Completed</span>
+    </div>
+    <p class="drag">Drag and drop to reorder list</p>
+  </main>
 
-  Todo
 
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>

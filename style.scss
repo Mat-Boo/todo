@@ -1,0 +1,274 @@
+$selectedTasks: #3a7bfd;
+$checkBackground: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+$emptyCircleBorderTask: hsl(237, 14%, 26%);
+$textTask: hsl(236, 9%, 61%);
+$tasksFooterText: hsl(235, 19%, 35%);
+$darkBgBody: hsl(235, 21%, 11%);
+$lightBgBody: hsl(240, 27%, 96%);
+$darkTaskBg: hsl(235, 24%, 19%);
+$lightTaskBg: hsl(0, 0%, 98%);
+
+
+$lightGrayishBlue2: hsl(234, 39%, 85%);
+$lightGrayishBlueHover: hsl(236, 33%, 92%);
+$darkGrayishBlue2: hsl(234, 11%, 52%);
+$verytextTask: hsl(233, 14%, 35%);
+$mainFont: 'Josefin Sans', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $mainFont;
+}
+
+.darkBody {
+    background: $darkBgBody;
+}
+
+.lightBody {
+    background: $lightBgBody;
+}
+
+header {    
+    background-size: cover;
+    width: 100vw;
+    height: 35vh;
+}
+
+.darkHeader {
+    background-image: url('./images/bg-desktop-dark.jpg');
+}
+
+.lightHeader {
+    background-image: url('./images/bg-desktop-light.jpg');
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    min-width: 350px;
+    position: relative;
+    top: -180px;
+}
+
+.titleBox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: white;
+    font-weight: 300;
+    margin: 10px 20px 10px 0;
+    font-weight: 700;
+    letter-spacing: 15px;
+}
+
+.sun, .moon {
+    padding: 15px 0 15px 15px;
+}
+
+.moon {
+    display: none;
+}
+
+.newTask {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.emptyCircle {
+    border: solid 1px $emptyCircleBorderTask;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        border: none;
+    }
+}
+
+#taskInput {
+    font-size: 1.5em;
+    padding: 10px 2% 10px 10%;
+    width: 88%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: $textTask;
+}
+
+.darkInput {
+    background: $darkTaskBg;
+}
+
+.lightInput {
+    background: $lightTaskBg;
+}
+
+.emptyCircleNewTask {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+}
+
+.tasksBox {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+
+.darkTasksBox {
+    background: $darkTaskBg;
+    box-shadow: 0 1px 50px hsl(0, 0%, 9%);
+}
+
+.lightTasksBox {
+    background: $lightTaskBg;
+    box-shadow: 0 1px 50px hsl(0, 0%, 57%);
+}
+
+.task {
+    font-size: 1.3em;
+    padding: 15px;
+    border-bottom: 1px solid $emptyCircleBorderTask;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+        margin-left: 15px;
+        color: $textTask;
+    }
+}
+
+.taskTitleBox {
+    display: flex;
+}
+
+.tasksFooter {
+    padding: 15px;
+    color: $tasksFooterText;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+
+.typeTask {
+    margin: 0 10px 0 10px;
+}
+
+.darkTypeTask:hover, .darkClearCompleted:hover {
+    color: white;
+}
+
+.lightTypeTask:hover, .lightClearCompleted:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.iconCheck {
+    width: 12px;
+    height: 12px;
+    display: none;
+    background: $checkBackground;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.borderCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;   
+    }
+}
+
+.darkEmptyCircleTask {
+    background: $darkTaskBg;
+}
+
+.lightEmptyCircleTask {
+    background: $lightTaskBg;
+}
+
+.drag {
+    font-size: 0.8em;
+    color: $tasksFooterText;
+    margin-top: 20px;
+}
+
+.invisible {
+    display: none;
+}
+
+.over {
+    transform: scale(1.1, 1.1);
+}
+
+.mobileFooterUp, .mobileFooterDown {
+    display: none;
+}
+
+.mobileFooterUp {
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    color: $tasksFooterText;
+    font-size: 0.8em;
+}
+
+.mobileFooterDown {
+    justify-content: center;
+    width: 90%;
+    padding: 5%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: $tasksFooterText;
+    font-size: 0.8em;
+}
+
+.darkMobileFooterDown {
+    background: $darkTaskBg;
+    box-shadow: 0 1px 50px hsl(0, 0%, 9%);
+}
+
+.lightMobileFooterDown {
+    background: $lightTaskBg;
+    box-shadow: 0 1px 50px hsl(0, 0%, 57%);
+}
+
+
+@media screen and (max-width: 980px) {
+    .mobileFooterUp, .mobileFooterDown {
+        display: flex;
+    }
+    .tasksFooter {
+        display: none;
+    }
+    #taskInput {
+        padding: 10px 2% 10px 14%;
+        width: 84%;
+    }
+     
+    
+}
