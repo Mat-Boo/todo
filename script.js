@@ -97,8 +97,10 @@ sun.addEventListener('click', () => {
         item.classList.add('lightTypeTask');
         item.classList.remove('darkTypeTask');
     });
-    clearCompleted.classList.add('lightClearCompleted');
-    clearCompleted.classList.remove('darkClearCompleted');
+    clearCompleted.forEach(item => {
+        item.classList.add('lightClearCompleted');
+        item.classList.remove('darkClearCompleted');
+    });
     mobileFooterDown.classList.add('lightMobileFooterDown');
     mobileFooterDown.classList.remove('darkMobileFooterDown');
 });
@@ -122,8 +124,10 @@ moon.addEventListener('click', () => {
         item.classList.remove('lightTypeTask');
         item.classList.add('darkTypeTask');
     });
-    clearCompleted.classList.remove('lightClearCompleted');
-    clearCompleted.classList.add('darkClearCompleted');
+    clearCompleted.forEach(item => {
+        item.classList.remove('lightClearCompleted');
+        item.classList.add('darkClearCompleted');
+    });
     mobileFooterDown.classList.remove('lightMobileFooterDown');
     mobileFooterDown.classList.add('darkMobileFooterDown');
 });
@@ -213,7 +217,7 @@ const addTask = () => {
     
     newTaskInput.value = '';
 };
-console.log(itemsLeft)
+
 const itemsLeftRefresh = () => {
     let i = 0;
     tasksObject.forEach(item =>{
