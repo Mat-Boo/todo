@@ -6,11 +6,11 @@ let activeTasks = document.querySelectorAll('.active');
 let activeClearBtn = document.querySelectorAll('.active .clear');
 let activeEmptyCircleTask = document.querySelectorAll('.active .emptyCircleTask');
 let activeTaskTitle = document.querySelectorAll('.active .taskTitle');
-let itemsLeft = document.querySelector('.itemsLeft');
+let itemsLeft = document.querySelectorAll('.itemsLeft');
 let activeIconCheck = document.querySelectorAll('.active .iconCheck');
 let h1 = document.querySelector('h1');
 let typeTask = document.querySelectorAll('.typeTask');
-const clearCompleted = document.querySelector('.clearCompleted');
+const clearCompleted = document.querySelectorAll('.clearCompleted');
 const sun = document.querySelector('.sun');
 const moon = document.querySelector('.moon');
 const body = document.querySelector('body');
@@ -96,7 +96,7 @@ sun.addEventListener('click', () => {
     typeTask.forEach(item => {
         item.classList.add('lightTypeTask');
         item.classList.remove('darkTypeTask');
-    })
+    });
     clearCompleted.classList.add('lightClearCompleted');
     clearCompleted.classList.remove('darkClearCompleted');
     mobileFooterDown.classList.add('lightMobileFooterDown');
@@ -121,7 +121,7 @@ moon.addEventListener('click', () => {
     typeTask.forEach(item => {
         item.classList.remove('lightTypeTask');
         item.classList.add('darkTypeTask');
-    })
+    });
     clearCompleted.classList.remove('lightClearCompleted');
     clearCompleted.classList.add('darkClearCompleted');
     mobileFooterDown.classList.remove('lightMobileFooterDown');
@@ -213,7 +213,7 @@ const addTask = () => {
     
     newTaskInput.value = '';
 };
-
+console.log(itemsLeft)
 const itemsLeftRefresh = () => {
     let i = 0;
     tasksObject.forEach(item =>{
@@ -222,9 +222,13 @@ const itemsLeftRefresh = () => {
         };
     });
     if (i < 2) {
-        itemsLeft.innerText = i + ' item left';
+        itemsLeft.forEach(el => {
+            el.innerText = i + ' item left';
+        });
     } else {
-        itemsLeft.innerText = i + ' items left';
+        itemsLeft.forEach(el => {
+            el.innerText = i + ' items left';
+        });
     };
 };
 
@@ -233,7 +237,7 @@ const completedFilter = () => {
         tasks.removeChild(tasks.firstChild);
     };
     tasksObject
-        .filter((taskObject) => taskObject.status.includes('completed'))
+        .filter((taskObject) => taskObject.status.includes('completed'));
         .map((taskObject) => {
             tasks.insertAdjacentHTML('beforeend',`
                 <li class="task active" id="${taskObject.id}" draggable="true">
@@ -260,7 +264,7 @@ const activeFilter = () => {
         tasks.removeChild(tasks.firstChild);
     };
     tasksObject
-        .filter((taskObject) => taskObject.status.includes('active'))
+        .filter((taskObject) => taskObject.status.includes('active'));
         .map((taskObject) => {
             tasks.insertAdjacentHTML('beforeend',`
                 <li class="task active" id="${taskObject.id}" draggable="true">
@@ -287,7 +291,7 @@ const allFilter = () => {
         tasks.removeChild(tasks.firstChild);
     };
     tasksObject
-        .filter((taskObject) => taskObject.status.includes('completed'))
+        .filter((taskObject) => taskObject.status.includes('completed'));
         .map((taskObject) => {
             tasks.insertAdjacentHTML('beforeend',`
                 <li class="task active" id="${taskObject.id}" draggable="true">
@@ -365,26 +369,28 @@ typeTask.forEach(item => {
             break;
         default:
             null;
-    }
+    };
 });
 
-clearCompleted.addEventListener('click', () => {
-    let tasksCompletedObject = [];
-    for (let i = 0 ; i < tasksObject.length ; i++) {
-        if (tasksObject[i].status === 'completed') {
-            tasksCompletedObject.push(tasksObject[i]);
-            activeTasks.forEach(el => {
-                if (el.id == tasksObject[i].id) {
-                    let taskToRemove = document.getElementById(tasksObject[i].id);
-                    taskToRemove.parentNode.removeChild(taskToRemove);
-                };
-            });
-            tasksObject.splice(tasksObject.indexOf(tasksObject[i]), 1);
-            i = i - 1;
+clearCompleted.forEach(item => {
+    item.addEventListener('click', () => {
+        let tasksCompletedObject = [];
+        for (let i = 0 ; i < tasksObject.length ; i++) {
+            if (tasksObject[i].status === 'completed') {
+                tasksCompletedObject.push(tasksObject[i]);
+                activeTasks.forEach(el => {
+                    if (el.id == tasksObject[i].id) {
+                        let taskToRemove = document.getElementById(tasksObject[i].id);
+                        taskToRemove.parentNode.removeChild(taskToRemove);
+                    };
+                });
+                tasksObject.splice(tasksObject.indexOf(tasksObject[i]), 1);
+                i = i - 1;
+            };
         };
-    };
-    itemsLeftRefresh();
-    refreshVarDom();
+        itemsLeftRefresh();
+        refreshVarDom();
+    });
 });
 
 itemsLeftRefresh();
